@@ -1,0 +1,1 @@
+commandConfig.js

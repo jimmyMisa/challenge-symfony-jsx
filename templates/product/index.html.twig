@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+
+{% block body %}
+{{ encore_entry_link_tags('product_list') }}
+<div id="app">
+</div>
+{{ encore_entry_script_tags('product_list') }}
+<script type="text/javascript">
+    window.product_list_api = "{{ path('product_list_api') }}"
+</script>
+{% endblock %}
