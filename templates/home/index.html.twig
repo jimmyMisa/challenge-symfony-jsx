@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div>
+    Hi home
+</div>
+<script type="text/javascript">
+    window.product_list_api = "{{ path('product_list_api') }}";
+</script>
+{% endblock %}

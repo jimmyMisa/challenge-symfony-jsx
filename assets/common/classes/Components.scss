@@ -1,0 +1,29 @@
+:global {
+    .pw_input {
+    	width:100%;
+    }
+    .field_pwd {
+        position: relative;
+        margin: 0;
+        display: inline-block;
+    }
+
+    .field_pwd .eye {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transform: rotateX(180deg);
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        bottom: 5px;
+        right: 12px;
+    }
+
+    .field_pwd input {
+        padding-right: 44px;
+    }
+}

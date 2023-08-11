@@ -8,6 +8,27 @@ class ProductApi{
 			then,
 		})
 	}
+	static add({query = {}, then = () =>{}} = {}){
+		api.post({
+			url:window.product_add_api,
+			data:{query},
+			then,
+		})
+	}
+	static edit({query = {}, then = () =>{}} = {}){
+		api.post({
+			url:window.product_edit_api,
+			data:{query},
+			then,
+		})
+	}
+	static remove({query = {}, then = () =>{}} = {}){
+		api.post({
+			url:window.product_remove_api,
+			data:{query},
+			then,
+		})
+	}
 }
 
 export {

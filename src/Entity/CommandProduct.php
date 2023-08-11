@@ -15,6 +15,7 @@ class CommandProduct
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'commandProducts')]
+    #[ORM\JoinColumn(onDelete:"SET NULL", nullable:true)]
     private ?Product $product = null;
 
     #[ORM\ManyToOne(inversedBy: 'commandProducts')]

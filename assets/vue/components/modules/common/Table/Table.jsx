@@ -6,7 +6,7 @@ class Table{
 				return (
 					<div>
 						{this.renderTableTop()}
-						<table>
+						<table class="table">
 							<thead>
 								{this.renderTableHead()}
 							</thead>
@@ -104,7 +104,7 @@ class Table{
 									return null
 								}
 								if(this.renderTableBodyAction){
-									return this.renderTableBodyAction(line)
+									return this.renderTableBodyAction({line,index})
 								}
 								return (
 									<td>
