@@ -72,12 +72,11 @@ export default C.make({
                             <h5 class="modal-title">Suppression du produit</h5>
 							<button
 								type="button"
-								class="close"
+								class="btn-close"
 								data-dismiss="modal"
 								aria-label="Close"
 								onClick={this.hide}
 							>
-								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
 						<div class="modal-body">

@@ -19,8 +19,8 @@ class BUTTON{
 	}
 	static REMOVE = {
 		TEXT:{
-			DEFAULT:"Supprimer",
-			BO:"Supprimer"
+			DEFAULT:"Confirmer",
+			BO:"Confirmer"
 		}
 	}
 }
