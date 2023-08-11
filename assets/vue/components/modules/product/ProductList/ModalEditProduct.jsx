@@ -72,7 +72,7 @@ export default C.make({
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Update Modal</h5>
+							<h5 class="modal-title">Modification du produit</h5>
 							<button
 								type="button"
 								class="close"
@@ -88,8 +88,12 @@ export default C.make({
                                 {renderError()}
                             </div>
                             <form action="#">
-                                {this.$input(price, set("price"))}
-                                {this.$input(name, set("name"))}
+								<div class="mb-3">
+                                	{this.$input(price, set("price"))}
+								</div>
+								<div class="mb-3">
+                                	{this.$input(name, set("name"))}
+								</div>
                             </form>
 						</div>
 						<div class="modal-footer">

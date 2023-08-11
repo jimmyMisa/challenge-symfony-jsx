@@ -159,15 +159,25 @@ export default C.make({
                             </div>
 
 							<form action="#" id="form_add_command">
-								{this.$input(name)}
-								{this.$input(price)}
-								{this.$input(quantity)}
-								{this.$input(status)}
-								{this.$select(product,()=>{},{
-									selectOption: {
-										dropdownParent: $("#form_add_command")
-									}
-								})}
+								<div class="mb-3">
+									{this.$input(name)}
+								</div>
+								<div class="mb-3">
+									{this.$input(price)}
+								</div>
+								<div class="mb-3">
+									{this.$input(quantity)}
+								</div>
+								<div class="mb-3">
+									{this.$input(status)}
+								</div>
+								<div class="mb-3">
+									{this.$select(product,()=>{},{
+										selectOption: {
+											dropdownParent: $("#form_add_command")
+										}
+									})}
+								</div>
 							</form>
 						</div>
 						<div class="modal-footer">

@@ -189,7 +189,7 @@ export default C.make({
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Update Modal</h5>
+							<h5 class="modal-title">Modification de la commande</h5>
 							<button
 								type="button"
 								class="close"
@@ -205,15 +205,25 @@ export default C.make({
                                 {renderError()}
                             </div>
                             <form action="#" id="form_edit_command">
-								{this.$input(name, set("name"))}
-								{this.$input(price, set("price"))}
-								{this.$input(quantity, set("quantity"))}
-								{this.$input(status, set("status"))}
-								{this.$select(product, set("product",true), {
-									selectOption: {
-										dropdownParent: $("#form_edit_command")
-									}
-								})}
+	                            <div class="mb-3">
+									{this.$input(name, set("name"))}
+								</div>
+								<div class="mb-3">
+									{this.$input(price, set("price"))}
+								</div>
+								<div class="mb-3">
+									{this.$input(quantity, set("quantity"))}
+								</div>
+								<div class="mb-3">
+									{this.$input(status, set("status"))}
+								</div>
+								<div class="mb-3">
+									{this.$select(product, set("product",true), {
+										selectOption: {
+											dropdownParent: $("#form_edit_command")
+										}
+									})}
+								</div>
                             </form>
 						</div>
 						<div class="modal-footer">

@@ -119,7 +119,7 @@ export default C.make({
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Add Modal</h5>
+							<h5 class="modal-title">Ajout du produit'</h5>
 							<button
 								type="button"
 								class="close"
@@ -136,8 +136,12 @@ export default C.make({
                             </div>
 
 							<form action="#">
-								{this.$input(name)}
-								{this.$input(price)}
+								<div class="mb-3">
+									{this.$input(name)}
+								</div>
+								<div class="mb-3">
+									{this.$input(price)}
+								</div>
 							</form>
 						</div>
 						<div class="modal-footer">

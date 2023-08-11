@@ -69,7 +69,7 @@ export default C.make({
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-                            <h5 class="modal-title">Supprimer un produit</h5>
+                            <h5 class="modal-title">Suppression du produit</h5>
 							<button
 								type="button"
 								class="close"
