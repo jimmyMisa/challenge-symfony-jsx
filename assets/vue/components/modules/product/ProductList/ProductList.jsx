@@ -71,14 +71,14 @@ export default C.make({
 				<button 
 					type="button" 
 					onClick={this.tableEvent("Edit", {line, index})}
-					class="btn btn-success mr-2"
+					class="btn btn-success mx-2"
 				>
 					Modifier
 				</button>
 				<button 
 					type="button" 
 					onClick={this.tableEvent("Remove", {line, index})}
-					class="btn btn-danger mr-2"
+					class="btn btn-danger mx-2"
 				>
 					Supprimer
 				</button>
