@@ -2,87 +2,15 @@ import { C } from "vue/helper/V02Component.jsx";
 import classNames from "classnames";
 import { 
     PwLoading,
-    PwButton,
-    Components
+    PwButton
 } from "pw-components-jsx-dev";
-import { ModalMethod } from 'classes/ModalMethod.js';
-import { ProductApi as api } from "modules/product/ProductApi.js";
 import { getConfig } from "modules/product/productConfig.js";
+import Components from "common/classes/Components.jsx";
+import { ModalMethod } from 'common/functions/modal/ModalMethod.jsx';
 
 export default C.make({
     ...Components.getMethods(),
 	...ModalMethod.getMethodsJsx(),
-
-	showLoading() {
-		this.config.loading = true;
-		this.refresh();
-	},
-
-	hideLoading() {
-		this.config.loading = false;
-		this.refresh();
-	},
-
-	renderFormFeedbackMessage() {
-		var { message = null } = this.config
-		if (message) {
-			return (
-				<div
-					class="alert alert-warning alert-dismissible fade show"
-					role="alert"
-				>
-					{message}
-					<button
-						type="button"
-						class="close"
-						data-dismiss="alert"
-						aria-label="Close"
-					>
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			);
-		}
-	},
-
-	handleValid(event) {
-		event.preventDefault();
-		var { data = {} } = this.config;
-		this.config.message = null;
-		this.showLoading();
-		var then = (result) => {
-			if (result.status == 200) {
-				getConfig().components.datatable.isLoading = true;
-				this.hide()
-				getConfig().components.instance.refresh()
-				api.load({then:(result) =>{
-					getConfig().components.data = result
-					getConfig().components.datatable.isLoading = false;
-					getConfig().components.instance.refresh()
-					this.hideLoading()
-				}})
-			}
-			else {
-				this.config.message = result.message
-				this.hideLoading()
-				this.refresh()
-			}
-		}
-		var params = {
-			query:data,
-			then
-		};
-		api.add(params)
-	},
-
-	handleChange(event) {
-		var {currentTarget:input} = event
-		var {value} = input;
-		var field_name = $(input).attr("name");
-		this.config.data[field_name] = value;
-		this.config.message = null;
-		this.refresh();
-	},
 
 	$render() {
 		var { 

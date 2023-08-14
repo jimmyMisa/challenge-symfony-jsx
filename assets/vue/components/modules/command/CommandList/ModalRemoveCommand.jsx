@@ -4,83 +4,14 @@ import {
     PwLoading,
     PwButton,
 } from "pw-components-jsx-dev";
-import { ModalMethod } from 'classes/ModalMethod.js';
-import { CommandApi as api } from "modules/command/CommandApi.js";
 import { getConfig } from "modules/command/commandConfig.js";
+import { ModalMethod } from 'common/functions/modal/ModalMethod.jsx';
+import { getPageText } from "common/functions/getPage.js"
+import Components from "common/classes/Components.jsx";
 
 export default C.make({
 	...ModalMethod.getMethodsJsx(),
-
-	showLoading() {
-		this.config.loading = true;
-		this.refresh();
-	},
-
-	hideLoading() {
-		this.config.loading = false;
-		this.refresh();
-	},
-
-	renderFormFeedbackMessage() {
-		var { message = null } = this.config
-		if (message) {
-			return (
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-				  {message}
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-			)
-		}
-	},
-
-	handleValid(event) {
-		event.preventDefault();
-		var { 
-			line = {} 
-		} = this.config;
-		var { id = null } = line
-		this.showLoading();
-		var data = {
-			id
-		};
-		var then = (result) => {
-			if (result && result.status == 200) {
-				this.hide()
-				getConfig().components.datatable.isLoading = true;
-				getConfig().components.instance.refresh()
-				api.load({then:(result) =>{
-					getConfig().components.datatable.isLoading = false;
-					getConfig().components.data = result.commands;
-					getConfig().components.products = result.products;
-					getConfig().components.instance.refresh()
-					this.hideLoading()
-				}})
-			}
-
-			if (
-				result && result.status == 500
-			) {
-				this.config.message = result.message;
-				this.hideLoading()
-				this.refresh()
-			}
-		};
-
-		var params = {
-			query:data,
-			then
-		};
-		api.remove(params);
-	},
-
-	onReady() {
-		var { ready = false } = this.config;
-		if (!ready) {
-			this.config.ready = true;
-		}
-	},
+    ...Components.getMethods(),
 
 	$render() {
 		this.onReady();

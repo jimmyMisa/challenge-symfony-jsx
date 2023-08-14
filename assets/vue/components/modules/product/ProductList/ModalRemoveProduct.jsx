@@ -2,13 +2,12 @@ import { C } from "vue/helper/V02Component.jsx";
 import classNames from "classnames";
 import { 
     PwLoading,
-    PwButton,
-    Components
+    PwButton
 } from "pw-components-jsx-dev";
-import { ModalMethod } from 'classes/ModalMethod.js';
-import { ProductApi as api } from "modules/product/ProductApi.js";
 import { getConfig } from "modules/product/productConfig.js";
 import { getPageText } from "common/functions/getPage.js"
+import Components from "common/classes/Components.jsx";
+import { ModalMethod } from 'common/functions/modal/ModalMethod.jsx';
 
 export default C.make({
 	...ModalMethod.getMethodsJsx(),

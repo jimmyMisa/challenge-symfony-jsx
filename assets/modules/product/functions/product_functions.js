@@ -18,6 +18,16 @@ function getModalCreateFields(){
     };
 };
 
+function loadProduct() {
+    getConfig().components.datatable.isLoading = true;
+    getConfig().components.instance.refresh()
+    api.load({then:(result) =>{
+        getConfig().components.data = result
+        getConfig().components.datatable.isLoading = false;
+        getConfig().components.instance.refresh()
+    }})
+}
+
 function getModalEditFields(){
     var page = "MODAL_PRODUCT_EDIT";
     var name = FieldManager.create("NAME", page);
@@ -85,13 +95,7 @@ function getButtonEdit(fields){
                 modal.hide();
                 modal.refresh();
 
-                getConfig().components.datatable.isLoading = true;
-                getConfig().components.instance.refresh()
-                api.load({then:(result) =>{
-                    getConfig().components.data = result
-                    getConfig().components.datatable.isLoading = false;
-                    getConfig().components.instance.refresh()
-                }})
+                loadProduct()
 
                 return true;
             }
@@ -162,13 +166,7 @@ function getButtonCreate(fields){
                 button.loading = false;
                 modal.hide();
                 modal.refresh();
-                getConfig().components.datatable.isLoading = true;
-                getConfig().components.instance.refresh();
-                api.load({then:(result) =>{
-                    getConfig().components.data = result
-                    getConfig().components.datatable.isLoading = false;
-                    getConfig().components.instance.refresh()
-                }})
+                loadProduct()
 
                 return true;
             }
@@ -229,13 +227,7 @@ function getButtonRemove(){
                 modal.hide();
                 modal.refresh();
 
-                getConfig().components.datatable.isLoading = true;
-                getConfig().components.instance.refresh()
-                api.load({then:(result) =>{
-                    getConfig().components.data = result
-                    getConfig().components.datatable.isLoading = false;
-                    getConfig().components.instance.refresh()
-                }})
+                loadProduct()
 
                 return true;
             }
@@ -254,13 +246,7 @@ function getButtonRemove(){
                 modal.hide();
                 modal.refresh();
 
-                getConfig().components.datatable.isLoading = true;
-                getConfig().components.instance.refresh()
-                api.load({then:(result) =>{
-                    getConfig().components.data = result
-                    getConfig().components.datatable.isLoading = false;
-                    getConfig().components.instance.refresh()
-                }})
+                loadProduct()
 
 
                 return true;

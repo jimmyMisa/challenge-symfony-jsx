@@ -4,104 +4,104 @@ class FIELD{
 	static NAME = {
 		...STRUCTURE.NAME,
 		PLACEHOLDER:{
-			DEFAULT:"Le nom du produit",
-			BO:"Le nom du produit",
+			DEFAULT:"Ny anaran'ny vokatra",
+			BO:"Ny anaran'ny vokatra",
 		},
 		LABEL:{
-			DEFAULT:"Entrez le nom du produit",
-			BO:"Entrez le nom du produit",
+			DEFAULT:"Ampidiro ny anaran'ny vokatra",
+			BO:"Ampidiro ny anaran'ny vokatra",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir le nom du produit",
-			BO:"Veuillez saisir le nom du produit"
+			DEFAULT:"Ampidiro azafady ny anaran'ny vokatra",
+			BO:"Ampidiro azafady ny anaran'ny vokatra"
 		},
 	}
 	static PRICE = {
 		...STRUCTURE.PRICE,
 		PLACEHOLDER:{
-			DEFAULT:"Prix du produit",
-			BO:"Prix du produit",
+			DEFAULT:"Vidin'ny vokatra",
+			BO:"Vidin'ny vokatra",
 		},
 		LABEL:{
-			DEFAULT:"Entrez le prix du produit",
-			BO:"Entrez le prix du produit",
+			DEFAULT:"Ampidiro ny vidin'ny vokatra",
+			BO:"Ampidiro ny vidin'ny vokatra",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir le prix du produit",
-			BO:"Veuillez saisir le prix du produit"
+			DEFAULT:"Ampidiro azafady ny vidin'ny vokatra",
+			BO:"Ampidiro azafady ny vidin'ny vokatra"
 		},
 	}
 	static NAME_COMMANDE = {
 		...STRUCTURE.NAME_COMMANDE,
 		PLACEHOLDER:{
-			DEFAULT:"Le nom de la commande",
-			BO:"Le nom de la commande",
+			DEFAULT:"Ny anaran'ny kaomandy",
+			BO:"Ny anaran'ny kaomandy",
 		},
 		LABEL:{
-			DEFAULT:"Nom de la commande",
-			BO:"Nom de la commande",
+			DEFAULT:"Anaran'ny kaomandy",
+			BO:"Anaran'ny kaomandy",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir le nom de la commande",
-			BO:"Veuillez saisir le nom de la commande"
+			DEFAULT:"Ampidiro azafady ny anarana kaomandy",
+			BO:"Ampidiro azafady ny anarana kaomandy"
 		},
 	}
 	static PRICE_COMMANDE = {
 		...STRUCTURE.PRICE_COMMANDE,
 		PLACEHOLDER:{
-			DEFAULT:"Prix de la commande",
-			BO:"Prix de la commande",
+			DEFAULT:"Vidin'ny kaomandy",
+			BO:"Vidin'ny kaomandy",
 		},
 		LABEL:{
-			DEFAULT:"Prix de la commande",
-			BO:"Prix de la commande",
+			DEFAULT:"Vidin'ny kaomandy",
+			BO:"Vidin'ny kaomandy",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir le prix de la commande",
-			BO:"Veuillez saisir le prix de la commande"
+			DEFAULT:"Ampidiro azafady ny vidin'ny kaomandy",
+			BO:"Ampidiro azafady ny vidin'ny kaomandy"
 		},
 	}
 	static QUANTITY = {
 		...STRUCTURE.QUANTITY,
 		PLACEHOLDER:{
-			DEFAULT:"Quantité",
-			BO:"Quantité",
+			DEFAULT:"Habetsahany",
+			BO:"Habetsahany",
 		},
 		LABEL:{
-			DEFAULT:"Quantité de la commande",
-			BO:"Quantité de la commande",
+			DEFAULT:"Isan'ny kaomandy",
+			BO:"Isan'ny kaomandy",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir la quantité de la commande",
-			BO:"Veuillez saisir la quantité de la commande"
+			DEFAULT:"Ampidiro azafady ny habetsahan'ny kaomandy",
+			BO:"Ampidiro azafady ny habetsahan'ny kaomandy"
 		},
 	}
 	static STATUS = {
 		...STRUCTURE.STATUS,
 		PLACEHOLDER:{
-			DEFAULT:"Le statut",
-			BO:"Le statut",
+			DEFAULT:"Ny sata",
+			BO:"Ny sata",
 		},
 		LABEL:{
-			DEFAULT:"Entrez le statut",
-			FO:"Entrez le statut",
-			BO:"Entrez le statut",
+			DEFAULT:"Ampidiro ny sata",
+			FO:"Ampidiro ny sata",
+			BO:"Ampidiro ny sata",
 		},
 		EMPTY_MESSAGE:{
-			DEFAULT:"Veuillez saisir le statut",
-			BO:"Veuillez saisir le statut",
+			DEFAULT:"Ampidiro azafady ny sata",
+			BO:"Ampidiro azafady ny sata",
 		},
 	}
 	static PRODUCT = {
 		...STRUCTURE.PRODUCT,
 		PLACEHOLDER:{
-			DEFAULT:"Produit",
+			DEFAULT:"Vokatra",
 		},
 		LABEL:{
-			DEFAULT:"Produit",
+			DEFAULT:"Vokatra",
 		},
 		INVALID_MESSAGE:{
-			DEFAULT:"Veillez sélectionner un produit",
+			DEFAULT:"Misafidiana vokatra iray azafady",
 		},
 	}
 }

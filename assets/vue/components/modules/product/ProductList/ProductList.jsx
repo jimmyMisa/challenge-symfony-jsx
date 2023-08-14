@@ -2,14 +2,13 @@ import { C } from "vue/helper/V02Component.jsx";
 import classNames from "classnames";
 
 import { Table } from "vue/components/modules/common/Table/Table.jsx";
-import { showModal } from "functions/modal_functions.js";
 import ModalAddProduct from "./ModalAddProduct.jsx";
 import ModalEditProduct from "./ModalEditProduct.jsx";
 import ModalRemoveProduct from "./ModalRemoveProduct.jsx";
 import { 
     PwLoading
 } from "pw-components-jsx-dev";
-
+import { showModal } from "common/functions/modal/modal_function.js";
 
 export default C.make({
 	...Table.getMethods(),
