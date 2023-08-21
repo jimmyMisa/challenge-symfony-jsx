@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upload file{% endblock %}
+{% block stylesheets %}
+    {# {{ encore_entry_link_tags('product_list') }} #}
+{% endblock %}
+
+{% block body %}
+<div id="app_form">
+    {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+    {% for flashMessage in app.flashes('error') %}
+        <div class="alert alert-danger">{{ flashMessage }}</div>
+    {% endfor %}
+    {% for flashMessage in app.flashes('success') %}
+        <div class="alert alert-success">{{ flashMessage }}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="mb-3">
+            {{ form_label(form.file, null, {
+                'label': 'Fichier à télécharger',
+                'label_attr': {'class': 'form-label'}
+            }) }}
+            {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
+            {% if form.file.vars.errors|length > 0 %}
+                <span class="form_feedback_error invalid-feedback d-block">
+                    {% for error in form.file.vars.errors %}
+                        {{ error.message }}
+                    {% endfor %}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+    <button 
+        type="submit" 
+        class="btn btn-primary"
+    >
+    Uploader le fichier
+    </button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
+
+{% block modals %}
+    <div id="app_modal_wrapper">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {# {{ encore_entry_script_tags('product_list') }} #}
+{% endblock %}

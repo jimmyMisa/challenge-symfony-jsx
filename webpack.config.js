@@ -34,6 +34,8 @@ Encore
     .addEntry('layout', './assets/modules/layout/index.js')
     .addEntry('product_list', './assets/modules/product/product_list_index.js')
     .addEntry('command_list', './assets/modules/command/command_list_index.js')
+    .addEntry('upload', './assets/modules/upload/upload_index.js')
+    .addEntry('stripe', './assets/modules/stripe/index.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

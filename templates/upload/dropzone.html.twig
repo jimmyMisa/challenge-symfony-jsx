@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upload file dropzone{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('upload') }}
+{% endblock %}
+
+{% block body %}
+<div id="app">
+</div>
+{% endblock %}
+
+{% block modals %}
+    <div id="app_modal_wrapper">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        window.api_file_upload_dropzone = "{{ path('api_file_upload_dropzone') }}";
+        window.api_file_remove_dropzone = "{{ path('api_file_remove_dropzone') }}";
+        window.api_file_reload_dropzone = "{{ path('api_file_reload_dropzone') }}";
+    </script>
+    {{ encore_entry_script_tags('upload') }}
+{% endblock %}

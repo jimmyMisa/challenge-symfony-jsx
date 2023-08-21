@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Paiement</h1>
+    
+    <form id="payment-form" action="{{ path('create_payment_session') }}" method="POST">
+        <script
+            src="https://js.stripe.com/v3/"
+            data-amount="2000"
+            data-currency="usd"
+            data-key="{{ stripe_api_key }}"
+        ></script>
+        <button id="submit-payment" type="submit">Payer</button>
+    </form>
+{% endblock %}
+
+{# {% block body %}
+    <h1>Paiement</h1>
+    
+    <div id="payment-form">
+        <input type="text" id="card-number" placeholder="Numéro de carte">
+        <input type="text" id="card-expiry" placeholder="MM/YY">
+        <input type="text" id="card-cvc" placeholder="CVC">
+        <button id="submit-payment">Payer</button>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var url = window.create_payment_session;
+        document.addEventListener('DOMContentLoaded', function() {
+            const stripe = Stripe('{{ stripe_publishable_key }}');
+            const elements = stripe.elements();
+
+            const card = elements.create('card');
+            card.mount('#card-number');
+
+            const cardExpiry = elements.create('cardExpiry');
+            cardExpiry.mount('#card-expiry');
+
+            const cardCvc = elements.create('cardCvc');
+            cardCvc.mount('#card-cvc');
+
+            const paymentForm = document.getElementById('payment-form');
+            paymentForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                const cardNumberElement = document.getElementById('card-number');
+                const cardExpiryElement = document.getElementById('card-expiry');
+                const cardCvcElement = document.getElementById('card-cvc');
+
+                const {token, error} = await stripe.createToken(card);
+
+
+                const data = {
+                    number: cardNumberElement.value,
+                    exp_month: cardExpiryElement.value.split('/')[0],
+                    exp_year: cardExpiryElement.value.split('/')[1],
+                    cvc: cardCvcElement.value,
+                    token: token
+                };
+
+                if (error) {
+                    console.error(error);
+                } else {
+                var then = () => {};
+                var data = {
+                    "token": token
+                }
+                $.ajax({
+                    method: "POST",
+                    url,
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    processData: false,
+                    contentType: "application/json",
+                }).always((result) =>{
+                    then(result)
+                })
+                }
+            });
+        });
+    </script>
+{% endblock %} #}

@@ -24,6 +24,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_command')}}">Commande</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('file_upload_form')}}">Upload</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('file_upload_dropzone')}}">Dropzone</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -44,9 +50,13 @@
 
         {% block modals %}
         {% endblock %}
-
+        {% if controller is defined and controller == "FileUploadController" %}
+            {{ encore_entry_script_tags('layout') }}
+        {% endif %}
         {% block javascripts %}
         {% endblock %}
-        {{ encore_entry_script_tags('layout') }}
+        {% if controller is not defined or controller != "FileUploadController" %}
+            {{ encore_entry_script_tags('layout') }}
+        {% endif %}
     </body>
 </html>

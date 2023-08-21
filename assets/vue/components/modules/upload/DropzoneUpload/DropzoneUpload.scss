@@ -1,0 +1,20 @@
+:global {
+	/*.pw_dropzone.dropzone .dz-preview .dz-details {
+		z-index: 20;
+		position: relative;
+		top: 0;
+		left: 0;
+		opacity: 1;
+		font-size: 13px;
+		min-width: 100%;
+		max-width: 100%;
+		padding: 2em 1em;
+		text-align: center;
+		color: rgba(0,0,0,.9);
+		line-height: 150%;
+	}*/
+	.dz-disabled {
+	    pointer-events: none; /* Désactive les événements de souris pour l'élément */
+	    opacity: 0.6; /* Rend l'élément légèrement transparent pour indiquer qu'il est désactivé */
+	}
+}

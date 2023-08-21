@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Redirection vers le paiement Stripe</h1>
+    <p>Veuillez patienter pendant que nous vous redirigeons vers la page de paiement...</p>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stripe = Stripe('{{ stripe_publishable_key }}');
+            
+            stripe.redirectToCheckout({
+                sessionId: '{{ sessionId }}'
+            }).then(function(result) {
+                // If 'result.error' exists, an error occurred.
+                if (result.error) {
+                    console.error(result.error);
+                }
+            });
+        });
+    </script>
+{% endblock %}

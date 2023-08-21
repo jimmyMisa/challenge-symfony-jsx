@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stripe{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+<div id="reservation-form">
+    <h1>Paiement</h1>
+    
+    <form id="payment-form" action="{{ path('create_payment_session') }}" method="POST">
+        <script
+            src="https://js.stripe.com/v3/"
+            data-amount="2000"
+            data-currency="usd"
+            data-key="{{ stripe_api_key }}"
+        ></script>
+        <button id="submit-payment" type="submit">Payer</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
